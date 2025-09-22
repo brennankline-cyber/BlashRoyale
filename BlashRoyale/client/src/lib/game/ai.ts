@@ -35,7 +35,7 @@ export function playAI(
       
       // AI places units on their side (positive Z) - top half only
       const x = (Math.random() - 0.5) * 16; // -8 to 8
-      const z = 1 + Math.random() * 11; // 1 to 12 (enemy side only - top half)
+      const z = 1 - Math.random() * 11; // 1 to 12 (enemy side only - top half)
       
       playCard(randomCard.id, [x, z]);
       aiElixir -= randomCard.cost;

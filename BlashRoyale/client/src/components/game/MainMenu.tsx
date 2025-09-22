@@ -1,5 +1,7 @@
 import { useBlashCroyale } from "../../lib/stores/useBlashCroyale";
 
+//CHANGED BATTLE BUTTON TO BE BLUE AND ADDED A CROWN EMOJI NEXT TO TITLE - BRENNAN
+
 export default function MainMenu() {
   const { setGamePhase, playerGold } = useBlashCroyale();
 
@@ -8,13 +10,13 @@ export default function MainMenu() {
       <div className="text-center space-y-8">
         <h1 className="text-7xl font-bold text-white mb-12 tracking-wider" 
             style={{ textShadow: '0 0 20px rgba(0, 0, 0, 0.7)' }}>
-          BLASH CROYALE
+          👑 BLASH CROYALE
         </h1>
         
         <div className="space-y-4">
           <button
             onClick={() => setGamePhase('battle')}
-            className="w-64 h-16 bg-red-600 hover:bg-red-700 text-white text-xl font-bold rounded-lg shadow-2xl transform hover:scale-105 transition-all"
+            className="w-64 h-16 bg-blue-600 hover:bg-blue-700 text-white text-xl font-bold rounded-lg shadow-2xl transform hover:scale-105 transition-all"
             style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)' }}
           >
             ⚔️ BATTLE

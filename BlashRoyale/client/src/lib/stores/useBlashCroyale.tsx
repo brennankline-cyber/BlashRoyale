@@ -82,7 +82,7 @@ export const useBlashCroyale = create<GameState>((set, get) => ({
   setGamePhase: (phase) => set({ gamePhase: phase }),
 
   // Player Stats
-  playerGold: 500,
+  playerGold: 0,
   ownedEmoticons: [],
   showEmoticon: null,
   purchaseEmoticon: (id, cost) => {
@@ -157,7 +157,10 @@ export const useBlashCroyale = create<GameState>((set, get) => ({
     const newGameTime = Math.max(0, state.gameTime - 0.1);
     
     // Generate elixir (even slower)
-    const elixirRate = state.gameTime > 90 ? 0.3 : 0.15; // Even slower elixir generation
+
+    //BRENNAN CHANGED SO WHEN HALF THE GAME IS OVER THE ELIXIR COUNT GOES FASTER NOT SLOWER
+
+    const elixirRate = state.gameTime > 90 ? 0.3 : 0.6; // Even slower elixir generation
     const newElixir = Math.min(10, state.playerElixir + (0.1 * elixirRate));
 
     // Move units
@@ -272,11 +275,14 @@ export const useBlashCroyale = create<GameState>((set, get) => ({
 
     // Tower shooting (archer towers only) - create arrow projectiles
     const newProjectiles: Projectile[] = [];
-    const shouldShoot = Math.random() < 0.03; // 3% chance per frame for tower shooting
+
+    //BRENNAN CHANGED THE SHOOTING RATE VALUE TO MAKE TOWERS SHOOT MORE OFTEN
+
+    const shouldShoot = Math.random() < 0.1; // 3% chance per frame for tower shooting
     
     if (shouldShoot) {
       // Enemy towers shooting at player units
-      combatUnits.filter(unit => unit.isPlayer).forEach(unit => {
+      combatUnits.filter(unit => !unit.isPlayer).forEach(unit => {
         // Check enemy left tower
         if (state.enemyTowers.left.health > 0) {
           const distance = Math.sqrt(
@@ -317,7 +323,7 @@ export const useBlashCroyale = create<GameState>((set, get) => ({
       });
       
       // Player towers shooting at enemy units
-      combatUnits.filter(unit => !unit.isPlayer).forEach(unit => {
+      combatUnits.filter(unit => unit.isPlayer).forEach(unit => {
         // Check player left tower
         if (state.playerTowers.left.health > 0) {
           const distance = Math.sqrt(

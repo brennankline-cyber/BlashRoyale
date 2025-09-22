@@ -20,7 +20,7 @@ export default function LoadingScreen() {
           <h1 
             className="text-6xl font-bold text-yellow-400 mb-4 tracking-wider"
             style={{
-              textShadow: '0 0 20px rgba(255, 255, 0, 0.5)',
+              textShadow: '0 0 20px rgba(255, 255, 255, 0.5)',
               animation: 'fadeIn 2s ease-in-out'
             }}
           >

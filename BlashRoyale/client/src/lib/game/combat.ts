@@ -52,14 +52,14 @@ function findTowerTarget(
   // Tower targeting with priority logic - updated positions
   const towers = unit.isPlayer ? 
     [
-      { pos: [-6, 0, 6], health: enemyTowers.left.health, type: 'archer', side: 'left' },
-      { pos: [6, 0, 6], health: enemyTowers.right.health, type: 'archer', side: 'right' },
-      { pos: [0, 0, 8], health: enemyTowers.king.health, type: 'king', side: 'center' }
-    ] :
-    [
       { pos: [-6, 0, -6], health: playerTowers.left.health, type: 'archer', side: 'left' },
       { pos: [6, 0, -6], health: playerTowers.right.health, type: 'archer', side: 'right' },
       { pos: [0, 0, -8], health: playerTowers.king.health, type: 'king', side: 'center' }
+    ] :
+    [
+      { pos: [-6, 0, 6], health: enemyTowers.left.health, type: 'archer', side: 'left' },
+      { pos: [6, 0, 6], health: enemyTowers.right.health, type: 'archer', side: 'right' },
+      { pos: [0, 0, 8], health: enemyTowers.king.health, type: 'king', side: 'center' }
     ];
 
   // Filter alive towers
@@ -159,14 +159,14 @@ export function processCombat(
     // Attack towers if in range - updated positions
     const towers = unit.isPlayer ? 
       [
-        { ref: updatedEnemyTowers.left, pos: [-6, 6] },
-        { ref: updatedEnemyTowers.right, pos: [6, 6] },
-        { ref: updatedEnemyTowers.king, pos: [0, 8] }
-      ] :
-      [
         { ref: updatedPlayerTowers.left, pos: [-6, -6] },
         { ref: updatedPlayerTowers.right, pos: [6, -6] },
         { ref: updatedPlayerTowers.king, pos: [0, -8] }
+      ] :
+      [
+        { ref: updatedEnemyTowers.left, pos: [-6, 6] },
+        { ref: updatedEnemyTowers.right, pos: [6, 6] },
+        { ref: updatedEnemyTowers.king, pos: [0, 8] }
       ];
 
     for (const tower of towers) {

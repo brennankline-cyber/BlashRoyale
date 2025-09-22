@@ -39,27 +39,27 @@ function Arena() {
       
       {/* River/divide - wider to emphasize crossing points */}
       <mesh position={[0, 0, -0.8]} rotation={[-Math.PI / 2, 0, 0]}>
-        <planeGeometry args={[20, 1.5]} />
-        <meshBasicMaterial color="#2196F3" />
+        <planeGeometry args={[22, 1]} />
+        <meshBasicMaterial color="#2cc3ffff" />
       </mesh>
 
       {/* Player Towers (Bottom - Blue) - moved forward more */}
-      <Tower position={[-6, 0, -6]} color="blue" tower={playerTowers.left} />
-      <Tower position={[0, 0, -8]} color="blue" tower={playerTowers.king} isKing />
-      <Tower position={[6, 0, -6]} color="blue" tower={playerTowers.right} />
-
-      {/* Enemy Towers (Top - Red) - moved forward more */}
       <Tower position={[-6, 0, 6]} color="red" tower={enemyTowers.left} />
       <Tower position={[0, 0, 8]} color="red" tower={enemyTowers.king} isKing />
       <Tower position={[6, 0, 6]} color="red" tower={enemyTowers.right} />
+
+      {/* Enemy Towers (Top - Red) - moved forward more */}
+      <Tower position={[-6, 0, -6]} color="blue" tower={playerTowers.left} />
+      <Tower position={[0, 0, -8]} color="blue" tower={playerTowers.king} isKing />
+      <Tower position={[6, 0, -6]} color="blue" tower={playerTowers.right} />
       
       {/* Two Bridges over river - aligned with paths */}
-      <mesh position={[-6, 0, -0.8]} rotation={[-Math.PI / 2, 0, 0]}>
-        <planeGeometry args={[2, 1]} />
+      <mesh position={[-6, 0.05, -0.8]} rotation={[-Math.PI / 2, 0, 0]}>
+        <planeGeometry args={[2, 2.5]} />
         <meshBasicMaterial color="#8D6E63" />
       </mesh>
-      <mesh position={[6, 0, -0.8]} rotation={[-Math.PI / 2, 0, 0]}>
-        <planeGeometry args={[2, 1]} />
+      <mesh position={[6, 0.05, -0.8]} rotation={[-Math.PI / 2, 0, 0]}>
+        <planeGeometry args={[2, 2.5]} />
         <meshBasicMaterial color="#8D6E63" />
       </mesh>
       

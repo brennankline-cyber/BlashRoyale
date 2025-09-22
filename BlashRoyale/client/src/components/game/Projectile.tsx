@@ -41,7 +41,7 @@ export default function ProjectileComponent({ projectile }: ProjectileProps) {
   const getProjectileMaterial = () => {
     switch (projectile.type) {
       case 'arrow':
-        return <meshBasicMaterial color="#8B4513" />;
+        return <meshBasicMaterial color="#b3a296ff" />;
       case 'fireball':
         return <meshBasicMaterial color="#FF4500" />;
       case 'cannonball':

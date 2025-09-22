@@ -8,7 +8,7 @@ interface TowerProps {
 }
 
 export default function Tower({ position, color, tower, isKing = false }: TowerProps) {
-  const baseColor = color === 'blue' ? '#2196F3' : '#F44336';
+  const baseColor = color === 'blue' ? '#F44336' : '#0004ffff';
   const size = isKing ? [2, 3, 2] : [1.5, 2, 1.5];
   
   if (tower.health <= 0) {
@@ -36,7 +36,7 @@ export default function Tower({ position, color, tower, isKing = false }: TowerP
       {/* Tower foundation */}
       <mesh position={[0, 0.1, 0]}>
         <cylinderGeometry args={[size[0] * 0.8, size[0] * 0.9, 0.2, 8]} />
-        <meshBasicMaterial color={color === 'blue' ? '#1565C0' : '#C62828'} />
+        <meshBasicMaterial color={color === 'blue' ? '#C62828' : '#1565C0'} />
       </mesh>
       
       {/* Tower base with details */}
@@ -84,7 +84,7 @@ export default function Tower({ position, color, tower, isKing = false }: TowerP
       {/* Tower top */}
       <mesh position={[0, size[1] + 0.3, 0]}>
         <coneGeometry args={[size[0] * 0.6, 0.6, 4]} />
-        <meshBasicMaterial color={color === 'blue' ? '#1976D2' : '#D32F2F'} />
+        <meshBasicMaterial color={color === 'blue' ? '#D32F2F' : '#1976D2'} />
       </mesh>
       
       {/* Health bar background */}
@@ -109,11 +109,11 @@ export default function Tower({ position, color, tower, isKing = false }: TowerP
         <>
           <mesh position={[0, size[1] + 1.2, 0]} rotation={[-Math.PI / 2, 0, 0]}>
             <planeGeometry args={[0.8, 0.8]} />
-            <meshBasicMaterial color="#FFD700" transparent opacity={0.9} />
+            <meshBasicMaterial color="#fbff00ff" transparent opacity={0.9} />
           </mesh>
           <mesh position={[0, size[1] + 1.4, 0]}>
             <coneGeometry args={[0.3, 0.4, 6]} />
-            <meshBasicMaterial color="#FFD700" />
+            <meshBasicMaterial color="#ffee00ff" />
           </mesh>
         </>
       )}

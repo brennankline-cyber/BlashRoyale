@@ -1,7 +1,7 @@
 import { useBlashCroyale } from "../../lib/stores/useBlashCroyale";
 
 const EMOTICONS = [
-  { id: 1, emoji: "😄", name: "Happy", cost: 100 },
+  { id: 1, emoji: "✝️", name: "Cross", cost: 0 },
   { id: 2, emoji: "😢", name: "Crying", cost: 100 },
   { id: 3, emoji: "😤", name: "Angry", cost: 150 },
   { id: 4, emoji: "😎", name: "Cool", cost: 150 },
